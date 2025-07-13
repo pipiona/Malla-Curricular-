@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Malla Curricular Interactiva</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fefefe;
+            margin: 40px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #5a5a5a;
+        }
+        .semestre {
+            margin-bottom: 40px;
+        }
+        .semestre h2 {
+            color: #777;
+        }
+        .materias {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .materia {
+            background-color: #d6eaf8;
+            padding: 12px 18px;
+            border-radius: 12px;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        .materia:hover {
+            opacity: 0.85;
+        }
+        .materia.tachada {
+            background-color: #d5dbdb;
+            text-decoration: line-through;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📚 Malla Curricular Interactiva</h1>
+
+    <div class="semestre">
+        <h2>1º Semestre</h2>
+        <div class="materias">
+            <div class="materia">MIBCM</div>
+            <div class="materia">MIBES</div>
+            <div class="materia">MSPHB</div>
+            <div class="materia">MAT1</div>
+        </div>
+    </div>
+
+    <div class="semestre">
+        <h2>2º Semestre</h2>
+        <div class="materias">
+            <div class="materia">MBCM</div>
+            <div class="materia">MAT2</div>
+        </div>
+    </div>
+
+    <div class="semestre">
+        <h2>3º Semestre</h2>
+        <div class="materias">
+            <div class="materia">MANAT</div>
+            <div class="materia">MHBIO</div>
+        </div>
+    </div>
+
+    <script>
+        // Permite tachar materias al hacer clic
+        const materias = document.querySelectorAll('.materia');
+        materias.forEach(materia => {
+            materia.addEventListener('click', () => {
+                materia.classList.toggle('tachada');
+            });
+        });
+    </script>
+</body>
+</html>
